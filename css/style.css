@@ -71,6 +71,12 @@ main {
     left:50%;
     height: 100vh;
     display: flex;
+    flex-direction: column;
+}
+
+.row {
+    flex-direction: row;
+
 }
 
 .material-symbols-outlined {
@@ -83,15 +89,29 @@ main {
   margin-right: 10px;
 }
 
-
-
 text {
-    margin-top: 20%;
     position: relative;
+}
+
+.margin20pr {
+    margin-top: 20%;
+
+}
+
+.margin130px {
+    margin-top: 130px;
+
 }
 
 h1 {
     font-size: 60px;
+    color: #2d2d2d;
+    margin: 0;
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 40px;
     color: #2d2d2d;
     margin: 0;
     font-weight: 500;
@@ -114,6 +134,13 @@ h4 {
     animation: slide 1s forwards;
     opacity: 0;
 }
+
+h5 {
+    font-size: 20px;
+    color: #838282;
+    font-weight: 400;
+}
+
 
 #a2 {
     animation: slide 1s 0.2s forwards;
