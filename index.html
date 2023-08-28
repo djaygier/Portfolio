@@ -8,7 +8,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     
     <link rel="stylesheet" href="/css/style.css">
@@ -20,28 +20,31 @@
         <nav>
             <nav-buttons>
              <a href="https://djay.nl/">
-                <nav-button class="blue">   <span class="material-symbols-outlined">
+                <nav-button class="blue no-left-padding">   <span class="material-symbols-outlined">
                     public
                     </span>Djay.nl</nav-button></a>
             </nav-buttons>
             <nav-buttons>
-                <nav-button>Home</nav-button>
+                <a href="index.html"> <nav-button >Home</nav-button></a>
                 <nav-button>Project</nav-button>
                 <nav-button>About</nav-button>
-                <nav-button>Contact</nav-button>  
+                <nav-button class="no-right-padding">Contact</nav-button>  
             </nav-buttons>
          
         </nav>
         
         <text>
             <h1>Djay de Gier</h1>
-            <h3>Hi, mijn naam is Djay de Gier. Ik ben een Software Developer & Student.</h3>
+            <h3>Hi, mijn naam is Djay de Gier. Ik ben een <color class="blue">Software Developer</color> & Student.</h3>
+            <h4>Student GLR</h4>
+            <h4 id="a2">Website Developer</h4>
+            <h4 id="a3">Mobile App developer</h4>
         </text>
 
-        <image>
-            <img src="media/foto.png">
+        <container>
             <circle></circle>
-        </image>
+            <img src="media/foto.png">
+        </container>
        
     </main>
    
