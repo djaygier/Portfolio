@@ -212,3 +212,59 @@ circle {
     background-color: #4894f2; 
     animation: slideImgOut 1s forwards;
 }
+
+projects {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+
+}
+
+project img {
+    height: max-content;
+    width: auto;
+    border-radius: 0;
+    animation: none;
+}
+
+
+
+project {
+    height: 500px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    border-left: 8px solid #0978fd;
+    border-top: 8px solid #0978fd;
+        border-bottom: 8px solid #6da8f0;
+    border-right: 8px solid #6da8f0;
+    border-radius: 10px;
+    transition: 0.3s cubic-bezier(.22,1.65,.98,.98);
+    cursor: pointer;
+}
+
+project:hover {
+    border-radius: 15px;
+    transform: translate(-6px, -6px) scale(1.03);
+        border-left: 11px solid #0978fd;
+    border-top: 11px solid #0978fd;
+        border-bottom: 11px solid #6da8f0;
+    border-right: 11px solid #6da8f0;
+}
+
+.title {
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 600;
+        padding-top: 0;
+    padding-bottom: 0;
+}
+
+.desc {
+    padding: 10px;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 17px;
+    font-weight: 400;
+    color: #838282;;
+}

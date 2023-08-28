@@ -37,30 +37,34 @@
         <text class="margin130px">
             <h1>Introductie</h1>
         </text>
-
-        <?php
-        class MyDB extends SQLite3
-        {
-            function __construct()
+        <br>
+        <projects>
+            <?php
+            class MyDB extends SQLite3
             {
-                $this->open('dbs/database.db');
+                function __construct()
+                {
+                    $this->open('dbs/database.db');
+                }
             }
-        }
 
-        $sql = <<<EOF
+            $sql = <<<EOF
         SELECT * from Projecten;
         EOF;
 
-        $db = new MyDB();
+            $db = new MyDB();
 
-        $ret = $db->query($sql);
-        while ($row = $ret->fetchArray(SQLITE3_ASSOC)) {
-            echo "<img src='media/{$row['image']}'>";
-            echo "<div class='title'>{$row['title']}</div>";
-            echo "<div class='desc'>{$row['desc']}</div>";
-        }
-        $db->close();
-        ?>
+            $ret = $db->query($sql);
+            while ($row = $ret->fetchArray(SQLITE3_ASSOC)) {
+                echo "<project>";
+                echo "<img src='media/{$row['image']}'>";
+                echo "<div class='title'>{$row['title']}</div>";
+                echo "<div class='desc'>{$row['desc']}</div>";
+                echo "</project>";
+            }
+            $db->close();
+            ?>
+        </projects>
     </main>
 </body>
 
