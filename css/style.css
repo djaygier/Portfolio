@@ -1,0 +1,21 @@
+nav {
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    width: max-content;
+    width: max-content;
+}
+
+body {
+    width: 100%;
+    height: fit-content;
+}
+
+main {
+    position: absolute;
+    left: 0;
+    max-width: 1800px;
+    background-color: red;
+    height: 100vh;
+}
