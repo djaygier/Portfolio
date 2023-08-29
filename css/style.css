@@ -377,3 +377,104 @@ project:hover {
   font-weight: 400;
   color: #838282;
 }
+
+row {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+}
+
+column {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+input {
+  height: 40px;
+  width: 600px;
+  padding: 0;
+  border: none;
+  outline: none;
+  background-color: #f7fafb;
+  border-radius: 3px;
+  padding-left: 15px;
+  font-weight: 500;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  font-weight: 400;
+  color: #bfc1c1;
+  opacity: 1; /* Firefox */
+}
+
+row > input {
+  width: 291px;
+}
+
+.input-text {
+  height: 40px;
+}
+
+form > row {
+  width: 800px;
+  display: flex;
+  justify-content: space-between;
+}
+
+form {
+  margin-top: 50px;
+  position: relative;
+  width: 800px;
+  height: 500px;
+}
+
+textarea {
+  height: 200px;
+  width: 600px;
+  padding: 0;
+  border: none;
+  outline: none;
+  background-color: #f7fafb;
+  border-radius: 3px;
+  padding-left: 15px;
+  font-weight: 500;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  resize: none;
+}
+
+input[type="submit"] {
+  width: 150px;
+  color: #f3f7ff;
+  background-color: rgb(72, 137, 242);
+  margin-right: 3px;
+  padding: 0;
+  margin-left: 465px;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+input[type="submit"].active {
+  color: rgb(147, 240, 147);
+  background-color: rgb(147, 240, 147);
+  width: 615px;
+  height: 400px;
+  transform: translatey(-400px);
+  margin-left: 0;
+}
+
+.checkAnimation {
+  height: 150px;
+  width: 150px;
+  position: absolute;
+  right: calc(50% - 160px);
+  top: calc(50% - 140px);
+}
+
+iframe {
+  display: none;
+}
