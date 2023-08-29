@@ -35,7 +35,7 @@
 
         </nav>
         <text class="margin130px">
-            <h1>Introductie</h1>
+            <h1>Projecten</h1>
         </text>
         <br>
         <projects>
@@ -56,7 +56,7 @@
 
             $ret = $db->query($sql);
             while ($row = $ret->fetchArray(SQLITE3_ASSOC)) {
-                echo "<project>";
+                echo "<project onclick=\"window.open('{$row['url']}', '_blank')\">";
                 echo "<img src='media/{$row['image']}'>";
                 echo "<div class='title'>{$row['title']}</div>";
                 echo "<div class='desc'>{$row['desc']}</div>";
