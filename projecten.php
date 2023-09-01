@@ -30,7 +30,7 @@
                 <a href="index.html"><nav-button>Home</nav-button></a>
                 <a href="projecten.php"><nav-button>Projecten</nav-button></a>
                 <a href="about.html"><nav-button>About</nav-button></a>
-                <a href="contact.html"><nav-button class="no-right-padding">Contact</nav-button></a>
+                <a href="contact.php"><nav-button class="no-right-padding">Contact</nav-button></a>
             </nav-buttons>
 
         </nav>

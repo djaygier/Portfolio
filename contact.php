@@ -32,7 +32,7 @@
       <nav-buttons>
         <a href="index.html"><nav-button>Home</nav-button></a>
         <a href="projecten.php"><nav-button>Projecten</nav-button></a>
-        <a href="contact.html"><nav-button class="no-right-padding">Contact</nav-button></a>
+        <a href="contact.php"><nav-button class="no-right-padding">Contact</nav-button></a>
         <a href="about.html"><nav-button>About</nav-button></a>
       </nav-buttons>
     </nav>
@@ -51,23 +51,24 @@
           </column>
           <column>
             <row>
-              <input type="text" placeholder="Naam" name="name" required />
-              <input type="text" placeholder="Achternaam" name="surname" required />
+              <input type="text" placeholder="Naam" name="name" id="name" required />
+              <input type="text" placeholder="Achternaam" name="surname" id="surname" required />
             </row>
-            <input type="email" placeholder="Email" name="email" required />
-            <input type="text" placeholder="*Optioneel* Telefoonnummer" name="telefoonnummer" />
-            <input type="text" placeholder="*Optioneel* Bedrijfsnaam" name="bedrijfsnaam" />
-            <textarea placeholder="Bericht" name="bericht" required></textarea>
+            <input type="email" placeholder="Email" name="email" id="email" required />
+            <input type="text" placeholder="Telefoonnummer *Optioneel*" name="telefoonnummer" id="telefoonnummer" />
+            <input type="text" placeholder="Bedrijfsnaam *Optioneel*" name="bedrijfsnaam" id="bedrijfsnaam" />
+            <textarea placeholder="Bericht" name="bericht" id="bericht" required></textarea>
             <input type="submit" value="Verstuur" required />
           </column>
         </row>
         <div class="checkAnimation"></div>
       </form>
-      <iframe name="frame"></iframe>
-
 
     </text>
   </main>
+
+
+  <iframe name="frame"></iframe>
 </body>
 
 </html>
