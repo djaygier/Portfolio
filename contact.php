@@ -41,6 +41,7 @@
     <text class="margin130px">
       <h1>Contact</h1>
       <form onsubmit="sendForm();" target="frame" method="POST" action="send.php">
+        <error>Invalid input</error>
         <row>
           <column>
             <div class="input-text">Naam</div>

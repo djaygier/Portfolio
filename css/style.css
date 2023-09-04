@@ -483,3 +483,24 @@ iframe {
 img {
   max-width: none;
 }
+
+.no-scroll {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+error {
+  color: rgb(236, 79, 79);
+  margin-left: 182px;
+  margin-bottom: 3px;
+  font-size: 17px;
+}
+
+input {
+  background-color: rgb(235, 130, 130);
+}
+
+textarea {
+  background-color: rgb(235, 130, 130);
+}

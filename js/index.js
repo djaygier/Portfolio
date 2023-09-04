@@ -2,6 +2,13 @@ async function sendForm() {
   if (busy == false) {
     busy = true;
 
+    // validate form input hihi
+
+    nameVal = document.getElementById("name").value;
+
+    if (nameVal != "") {
+    }
+
     const form = document.querySelector('input[type="submit"]');
 
     form.classList.add("active");
