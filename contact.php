@@ -40,7 +40,7 @@
 
     <text class="margin130px">
       <h1>Contact</h1>
-      <form onsubmit="sendForm();" target="frame" method="POST" action="send.php">
+      <form novalidate onsubmit="sendForm();" target="frame" method="POST" action="">
         <error>Invalid input</error>
         <row>
           <column>
@@ -52,14 +52,16 @@
           </column>
           <column>
             <row>
-              <input type="text" placeholder="Naam" name="name" id="name" required />
-              <input type="text" placeholder="Achternaam" name="surname" id="surname" required />
+              <input type="text" oninput="onInput(this)" placeholder="Naam" name="name" id="name" />
+              <input type="text" oninput="onInput(this)" placeholder="Achternaam" name="surname" id="surname" />
             </row>
-            <input type="email" placeholder="Email" name="email" id="email" required />
-            <input type="text" placeholder="Telefoonnummer *Optioneel*" name="telefoonnummer" id="telefoonnummer" />
-            <input type="text" placeholder="Bedrijfsnaam *Optioneel*" name="bedrijfsnaam" id="bedrijfsnaam" />
-            <textarea placeholder="Bericht" name="bericht" id="bericht" required></textarea>
-            <input type="submit" value="Verstuur" required />
+            <input type="email" oninput="onInput(this)" placeholder="Email" name="email" id="email" />
+            <input type="text" oninput="onInput(this)" placeholder="Telefoonnummer *Optioneel*" name="telefoonnummer"
+              id="telefoonnummer" />
+            <input type="text" oninput="onInput(this)" placeholder="Bedrijfsnaam *Optioneel*" name="bedrijfsnaam"
+              id="bedrijfsnaam" />
+            <textarea placeholder="Bericht" oninput="onInput(this)" name="bericht" id="bericht"></textarea>
+            <input type="submit" value="Verstuur" />
           </column>
         </row>
         <div class="checkAnimation"></div>
