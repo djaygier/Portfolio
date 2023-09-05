@@ -1,0 +1,37 @@
+﻿@page
+@model CustomValidationModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form valideren Introweek</title>
+</head>
+<body>
+    <h1>Introweek form c#</h1>
+
+    <form enctype="multipart/form-data"  method="post">
+        <div>
+            <label for="Name">Naam</label>
+            <input type="text" id="name" name="name" asp-for="FormData!.Name" />
+            <span asp-validation-for="FormData!.Name" class="text-danger"></span>
+        </div>
+        <div>
+            <label for="Surname">Achternaam</label>
+            <input type="text" id="surname" name="surname" asp-for="FormData!.Surname" />
+            <span asp-validation-for="FormData!.Surname" class="text-danger"></span>
+        </div>
+        <div>
+            <label for="Email">Email</label>
+            <input type="text" id="email" name="email" asp-for="FormData!.Email" />
+            <span asp-validation-for="FormData!.Email" class="text-danger"></span>
+        </div>
+
+        <div>
+            <label for="InputFile">Upload een bestand :</label>
+            <input type="file" id="InputFile" name="File" required />
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
