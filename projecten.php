@@ -15,9 +15,11 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
     <link rel="stylesheet" href="/css/style.css">
+
+    <script src="../js/projecten.js"></script>
 </head>
 
-<body>
+<body onload="projectenAnimation();">
     <main>
         <nav>
             <nav-buttons>
@@ -35,9 +37,11 @@
 
         </nav>
         <text class="margin130px">
-            <h1>Projecten</h1>
         </text>
-        <br>
+        <h1>Persoonlijke projecten</h1>
+        <br />
+        <br />
+
         <projects>
             <?php
             class MyDB extends SQLite3
@@ -49,7 +53,7 @@
             }
 
             $sql = <<<EOF
-        SELECT * from Projecten;
+        SELECT * from Projecten WHERE category='persoonlijk';
         EOF;
 
             $db = new MyDB();
@@ -57,7 +61,7 @@
             $ret = $db->query($sql);
             while ($row = $ret->fetchArray(SQLITE3_ASSOC)) {
                 echo "<project onclick=\"window.open('{$row['url']}', '_blank')\">";
-                echo "<img src='media/logos/{$row['image']}'>";
+                echo "<img loading='lazy' src='media/logos/{$row['image']}'>";
                 echo "<div class='title'>{$row['title']}</div>";
                 echo "<div class='desc'>{$row['desc']}</div>";
                 echo "</project>";
@@ -65,6 +69,30 @@
             $db->close();
             ?>
         </projects>
+        <h1>School projecten</h1>
+        <br />
+        <br />
+        <projects>
+            <?php
+
+            $sql = <<<EOF
+        SELECT * from Projecten WHERE category='school';
+        EOF;
+
+            $db = new MyDB();
+
+            $ret = $db->query($sql);
+            while ($row = $ret->fetchArray(SQLITE3_ASSOC)) {
+                echo "<project onclick=\"window.open('{$row['url']}', '_blank')\">";
+                echo "<img loading='lazy' src='media/logos/{$row['image']}'>";
+                echo "<div class='title'>{$row['title']}</div>";
+                echo "<div class='desc'>{$row['desc']}</div>";
+                echo "</project>";
+            }
+            $db->close();
+            ?>
+        </projects>
+
     </main>
 </body>
 

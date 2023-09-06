@@ -37,41 +37,43 @@
       </nav-buttons>
     </nav>
 
+    <row class="margin130px spacebetween">
+      <text>
+        <h1>Contact</h1>
+        <form novalidate onsubmit="sendForm();" target="frame" method="POST" action="">
+          <error>Invalid input</error>
+          <row>
+            <column>
+              <div class="input-text">Naam</div>
+              <div class="input-text">Email</div>
+              <div class="input-text">Telefoonnummer</div>
+              <div class="input-text">Bedrijfsnaam</div>
+              <div class="input-text">Bericht</div>
+            </column>
+            <column>
+              <row>
+                <input type="text" oninput="onInput(this)" placeholder="Naam" name="name" id="name" />
+                <input type="text" oninput="onInput(this)" placeholder="Achternaam" name="surname" id="surname" />
+              </row>
+              <input type="email" oninput="onInput(this)" placeholder="Email" name="email" id="email" />
+              <input type="text" oninput="onInput(this)" placeholder="Telefoonnummer *Optioneel*" name="telefoonnummer"
+                id="telefoonnummer" />
+              <input type="text" oninput="onInput(this)" placeholder="Bedrijfsnaam *Optioneel*" name="bedrijfsnaam"
+                id="bedrijfsnaam" />
+              <textarea placeholder="Bericht" oninput="onInput(this)" name="bericht" id="bericht"></textarea>
+              <input type="submit" value="Verstuur" />
+            </column>
+          </row>
+          <div class="checkAnimation"></div>
+        </form>
 
-    <text class="margin130px">
-      <h1>Contact</h1>
-      <form novalidate onsubmit="sendForm();" target="frame" method="POST" action="">
-        <error>Invalid input</error>
-        <row>
-          <column>
-            <div class="input-text">Naam</div>
-            <div class="input-text">Email</div>
-            <div class="input-text">Telefoonnummer</div>
-            <div class="input-text">Bedrijfsnaam</div>
-            <div class="input-text">Bericht</div>
-          </column>
-          <column>
-            <row>
-              <input type="text" oninput="onInput(this)" placeholder="Naam" name="name" id="name" />
-              <input type="text" oninput="onInput(this)" placeholder="Achternaam" name="surname" id="surname" />
-            </row>
-            <input type="email" oninput="onInput(this)" placeholder="Email" name="email" id="email" />
-            <input type="text" oninput="onInput(this)" placeholder="Telefoonnummer *Optioneel*" name="telefoonnummer"
-              id="telefoonnummer" />
-            <input type="text" oninput="onInput(this)" placeholder="Bedrijfsnaam *Optioneel*" name="bedrijfsnaam"
-              id="bedrijfsnaam" />
-            <textarea placeholder="Bericht" oninput="onInput(this)" name="bericht" id="bericht"></textarea>
-            <input type="submit" value="Verstuur" />
-          </column>
-        </row>
-        <div class="checkAnimation"></div>
-      </form>
-
-    </text>
+      </text>
+      <div class="contactAnimation"></div>
+    </row>
   </main>
 
 
-  <iframe name="frame"></iframe>
+  <iframe id="none" name="frame"></iframe>
 </body>
 
 </html>

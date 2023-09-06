@@ -18,8 +18,10 @@
     />
 
     <link rel="stylesheet" href="/css/style.css" />
+
+    <script src="../js/about.js"></script>
   </head>
-  <body>
+  <body onload="loadIframe()">
     <main>
       <nav>
         <nav-buttons>
@@ -53,10 +55,16 @@
               verschillende programmeertalen zoals Python, C#, Dart en web.
             </h5>
             <br />
-            <a download href="../media/cv.pdf"><button>Download CV</button></a>
+            <a href="https://djay.nl/" target="_blank"
+              ><button id="djay">Djay.nl</button></a
+            >
+            <a target="_blank" href="../media/cv.pdf"
+              ><button>Bekijk CV</button></a
+            >
           </div>
           <img src="../media/ecuador.png" alt="Djay" />
         </row>
+        <br />
         <br />
         <br />
         <skills>
@@ -81,6 +89,7 @@
         </skills>
         <br />
         <br />
+        <br />
 
         <h2>Student GLR</h2>
         <h5>
@@ -95,11 +104,18 @@
         <h2>Website development</h2>
         <h5>
           Vroeger had ik altijd een dreef om aan websites te werken. Dit deed ik
-          vaak bij CoderDojo Maassluis, een vrjwilligings werk. Hier werd ik
-          uiteindelijk ook de instructeur. Ik probeer mezelf altijd te
-          verbeteren en zoals in al mijn werk zoek ik actief naar feedback. Tot
-          nu toe staan er een aantal websites onder mijn naam, zoals Djay.nl,
-          Antspace.eu en de tijdelijk online GLR schoolfeest website.
+          vaak bij
+          <a
+            href="https://www.debibliotheekdeplataan.nl/doen/CoderDojo.html"
+            target="_blank"
+            >CoderDojo Maassluis</a
+          >, een vrjwilligings werk. Hier werd ik uiteindelijk ook de
+          instructeur. Ik probeer mezelf altijd te verbeteren en zoals in al
+          mijn werk zoek ik actief naar feedback. Tot nu toe staan er een aantal
+          websites onder mijn naam, zoals
+          <a target="_blank" href="https://djay.nl/">Djay.nl</a>,
+          <a target="_blank" href="https://antspace.eu/">Antspace.eu</a> en de
+          tijdelijk online GLR schoolfeest website.
         </h5>
         <br />
         <br />
@@ -128,6 +144,16 @@
           en Spaans vertalen.
         </h5>
       </text>
+      <iframe
+        width="1300px"
+        height="700px"
+        src=""
+        title="MierenGids Trailer"
+        frameborder="0"
+        id="trailer"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
+        allowfullscreen
+      ></iframe>
     </main>
   </body>
 </html>

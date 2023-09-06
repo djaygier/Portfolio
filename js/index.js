@@ -40,6 +40,7 @@ async function sendForm() {
     if (!validated) {
       form.action = "send.php";
       form.submit();
+      contactVector.classList.add("green");
       await delay(50);
 
       form.action = "";
@@ -47,11 +48,12 @@ async function sendForm() {
 
       formButton.classList.add("active");
       await delay(600);
-      iconSkipForward.style.display = "block";
-      animationSkipForward.playSegments([0, 60], true);
+      iconCheck.style.display = "block";
+      iconCheckAnimation.playSegments([0, 60], true);
       await delay(1200);
+      contactVector.classList.remove("green");
       formButton.classList.remove("active");
-      iconSkipForward.style.display = "none";
+      iconCheck.style.display = "none";
       clearformButton();
       await delay(1200);
       busy = false;
@@ -89,18 +91,27 @@ function clearformButton() {
   document.getElementById("bericht").value = "";
 }
 
-let iconSkipForward = document.querySelector(".checkAnimation");
+let iconCheck = document.querySelector(".checkAnimation");
+let contactVector = document.querySelector(".contactAnimation");
 
-let animationSkipForward = bodymovin.loadAnimation({
-  container: iconSkipForward,
+let iconCheckAnimation = bodymovin.loadAnimation({
+  container: iconCheck,
   renderer: "svg",
   loop: false,
   autoplay: false,
   path: "media/check.json",
 });
 
+let contactAnimation = bodymovin.loadAnimation({
+  container: contactVector,
+  renderer: "svg",
+  loop: true,
+  autoplay: true,
+  path: "media/contactLottie.json",
+});
+
+busy = false;
+
 function delay(time) {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
-
-busy = false;
