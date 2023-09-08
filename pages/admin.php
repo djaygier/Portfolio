@@ -21,25 +21,32 @@
 
 <body onload="projectenAnimation();">
     <main>
-        <nav>
-            <nav-buttons id="djaynl">
-                <a href="https://djay.nl/">
-                    <nav-button class="blue no-left-padding"> <span class="material-symbols-outlined">
-                            public
-                        </span>Djay.nl</nav-button></a>
-            </nav-buttons>
-            <nav-buttons>
-                <a href="../index.html"><nav-button>Home</nav-button></a>
-                <a href="projecten.php"><nav-button id="selected">Projecten</nav-button></a>
-                <a href="contact.php"><nav-button class="no-right-padding">Contact</nav-button></a>
-                <a href="about.html"><nav-button>About</nav-button></a>
-            </nav-buttons>
-
-        </nav>
-        <text class="margin130px">
-        </text>
-        <h1>Projecten</h1>
-        <br />
+        <h1>Admin panel</h1>
+        <form class="admin" target="frame" method="POST" action="../php/add.php">
+            <row>
+                <column>
+                    <div class="input-text">Titel</div>
+                    <div class="input-text">Beschrijving</div>
+                    <div class="input-text">Datum</div>
+                    <div class="input-text">URL</div>
+                    <div class="input-text">Foto URL</div>
+                    <div class="input-text">Categorie</div>
+                </column>
+                <column>
+                    <input type="text" placeholder="Titel" name="title" />
+                    <input type="text" placeholder="Beschrijving" name="desc" />
+                    <input type="text" placeholder="datum" name="datum" />
+                    <input type="text" placeholder="URL" name="url" />
+                    <input type="text" placeholder="Foto URL" name="image" />
+                    <select name="category" id="cato">
+                        <option value="Persoonlijk">Persoonlijk</option>
+                        <option value="School">School</option>
+                    </select>
+                    <input type="submit" value="Toevoegen" />
+                </column>
+            </row>
+            <div class="checkAnimation"></div>
+        </form>
         <h2>Persoonlijk</h2>
         <h3 class="full-width">Mijn eigen projecten, elk project hiervan heb ik alleen gemaakt in mijn vrije tijd.</h3>
 
@@ -53,25 +60,40 @@
                 }
             }
 
+            if (isset($_POST['delete_project'])) {
+                $projectId = $_POST['delete_project'];
+                $db = new MyDB();
+                $sql = "DELETE FROM Projecten WHERE id = :id";
+                $stmt = $db->prepare($sql);
+                $stmt->bindValue(':id', $projectId, SQLITE3_INTEGER);
+                $stmt->execute();
+                $db->close();
+            }
+
             $sql = <<<EOF
-        SELECT * from Projecten WHERE category='persoonlijk';
-        EOF;
+    SELECT * from Projecten WHERE category='persoonlijk';
+EOF;
 
             $db = new MyDB();
 
             $ret = $db->query($sql);
             while ($row = $ret->fetchArray(SQLITE3_ASSOC)) {
-                echo "<project onclick=\"window.open('{$row['url']}', '_blank')\">";
+                echo "<project class='admin' >";
                 echo "<img loading='lazy' src='{$row['image']}'>";
                 echo "<row class='space-between'>";
                 echo "<div class='title'>{$row['title']}</div>";
                 echo "<div class='date'>{$row['datum']}</div>";
                 echo "</row>";
                 echo "<div class='desc'>{$row['desc']}</div>";
+                echo "<form method='POST' action=''>";
+                echo "<input type='hidden' name='delete_project' value='{$row['id']}'>";
+                echo "<button type='submit'><img class='trash' src='../media/trash.svg'ß></button>";
+                echo "</form>";
                 echo "</project>";
             }
             $db->close();
             ?>
+
         </projects>
         <h2>School projecten</h2>
         <h3 class="full-width">Deze projecten zijn gemaakt voor een verplichte of vrijwillige opdracht voor Grafisch
@@ -88,13 +110,17 @@
 
             $ret = $db->query($sql);
             while ($row = $ret->fetchArray(SQLITE3_ASSOC)) {
-                echo "<project onclick=\"window.open('{$row['url']}', '_blank')\">";
+                echo "<project class='admin' >";
                 echo "<img loading='lazy' src='{$row['image']}'>";
                 echo "<row class='space-between'>";
                 echo "<div class='title'>{$row['title']}</div>";
                 echo "<div class='date'>{$row['datum']}</div>";
                 echo "</row>";
                 echo "<div class='desc'>{$row['desc']}</div>";
+                echo "<form method='POST' action=''>";
+                echo "<input type='hidden' name='delete_project' value='{$row['id']}'>";
+                echo "<button type='submit'><img class='trash' src='../media/trash.svg'ß></button>";
+                echo "</form>";
                 echo "</project>";
             }
             $db->close();
@@ -105,6 +131,8 @@
             reserved.
         </footer>
     </main>
+    <iframe id="none" name="frame"></iframe>
+
 </body>
 
 </html>
