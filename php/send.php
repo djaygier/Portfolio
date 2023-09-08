@@ -1,7 +1,7 @@
 <?php
 echo "dest";
 
-$db = new SQLite3(filename: 'dbs/database.db');
+$db = new SQLite3(filename: '../dbs/database.db');
 
 $db->busyTimeout(milliseconds: 3000);
 
@@ -25,9 +25,5 @@ $query =
 VALUES ('$naam','$achternaam','$telefoonnummer','$email', '$naam')";
 
 $db->exec($query);
-
-
-
-// header(header: "Location: ../details.php?naam={$naam}");
 
 ?>

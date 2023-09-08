@@ -16,23 +16,23 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.3/lottie_svg.min.js"></script>
 
-  <script src="js/index.js" defer></script>
+  <script src="../js/index.js" defer></script>
 
-  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="../css/style.css" />
 </head>
 
-<body>
+<body class="no-scroll">
   <main>
     <nav>
-      <nav-buttons>
+      <nav-buttons id="djaynl">
         <a href="https://djay.nl/">
           <nav-button class="blue no-left-padding">
             <span class="material-symbols-outlined"> public </span>Djay.nl</nav-button></a>
       </nav-buttons>
       <nav-buttons>
-        <a href="index.html"><nav-button>Home</nav-button></a>
+        <a href="../index.html"><nav-button>Home</nav-button></a>
         <a href="projecten.php"><nav-button>Projecten</nav-button></a>
-        <a href="contact.php"><nav-button class="no-right-padding">Contact</nav-button></a>
+        <a href="contact.php"><nav-button id="selected" class="no-right-padding">Contact</nav-button></a>
         <a href="about.html"><nav-button>About</nav-button></a>
       </nav-buttons>
     </nav>
@@ -74,6 +74,11 @@
 
 
   <iframe id="none" name="frame"></iframe>
+
+  <footer class="absolute">
+    © 2023 <a target="_blank" href="https://djay.nl/">Djay.nl</a>, All rights
+    reserved.
+  </footer>
 </body>
 
 </html>

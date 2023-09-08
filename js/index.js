@@ -38,7 +38,7 @@ async function sendForm() {
     }
 
     if (!validated) {
-      form.action = "send.php";
+      form.action = "../php/send.php";
       form.submit();
       contactVector.classList.add("green");
       await delay(50);
@@ -99,7 +99,7 @@ let iconCheckAnimation = bodymovin.loadAnimation({
   renderer: "svg",
   loop: false,
   autoplay: false,
-  path: "media/check.json",
+  path: "../media/check.json",
 });
 
 let contactAnimation = bodymovin.loadAnimation({
@@ -107,7 +107,7 @@ let contactAnimation = bodymovin.loadAnimation({
   renderer: "svg",
   loop: true,
   autoplay: true,
-  path: "media/contactLottie.json",
+  path: "../media/contactLottie.json",
 });
 
 busy = false;
