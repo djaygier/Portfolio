@@ -1,11 +1,7 @@
 <?php
-echo "dest";
-
 $db = new SQLite3(filename: '../dbs/database.db');
 
 $db->busyTimeout(milliseconds: 3000);
-
-echo "des2t";
 
 $naam = SQLite3::escapeString(($_POST["name"]));
 
